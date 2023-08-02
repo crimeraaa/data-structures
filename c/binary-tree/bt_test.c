@@ -36,7 +36,7 @@ int main(void)
         int *ptr = malloc(sizeof(int));
         if (!ptr)
         {
-            bt_destroy(btree);
+            bt_destroy(&btree);
             return EXIT_FAILURE;
         }
         *ptr = testarray[i];
@@ -46,19 +46,7 @@ int main(void)
     bt_printbt(btree);
     printf("\n");
 
-    int x = 2;
-    printf("<< TREE PRINTOUT 2 >>\n");
-
-    if (bt_remove(btree, &x))
-        printf("Removed %i.\n", x);
-    else
-        printf("Could not remove %i.\n", x);
-
-    bt_printbt(btree);
-    printf("\n");
-
-    bt_destroy(btree);
-    btree = NULL;
+    bt_destroy(&btree);
 
     return EXIT_SUCCESS;
 }

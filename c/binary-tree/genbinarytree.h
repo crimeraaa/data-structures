@@ -90,7 +90,7 @@ bool bt_insert(bt_root *root, void *obj);
 bool bt_remove(bt_root *root, void *obj);
 void *bt_search(bt_root *root, void *obj);
 void bt_printbt(bt_root *root);
-void bt_destroy(bt_root *root);
+void bt_destroy(bt_root **root_address);
 
 #ifdef __cplusplus
 }

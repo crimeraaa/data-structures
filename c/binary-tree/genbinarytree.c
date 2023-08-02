@@ -237,12 +237,14 @@ static void bt_print_recurse(int recurse, printobj *printfn, bt_branch *node)
     bt_print_recurse(recurse + 1, printfn, node->rchild);
 }
 
-void bt_destroy(bt_root *root)
+void bt_destroy(bt_root **root_address)
 {
+    bt_root *root = *root_address;
     if (!root) return;
 
     bt_destroy_recurse(root->freefn, root->branch);
     free(root);
+    *root_address = NULL;
 }
 
 static void bt_destroy_recurse(free_obj *freefn, bt_branch *node)

@@ -59,7 +59,7 @@ void *stack_pop(Stack *stack);
 
 void stack_print(Stack *stack);
 
-void stack_destroy(Stack *stack);
+void stack_destroy(Stack **ptr_address);
 
 #ifdef __cplusplus
 }

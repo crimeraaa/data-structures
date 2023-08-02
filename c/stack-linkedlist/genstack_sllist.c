@@ -78,8 +78,9 @@ void stack_print(Stack *stack)
     printf("************************\n");
 }
 
-void stack_destroy(Stack *stack)
+void stack_destroy(Stack **ptr_address)
 {
+    Stack *stack = *ptr_address;
     if (!stack) return;
 
     sllnode *ptr = stack->list;
@@ -91,4 +92,5 @@ void stack_destroy(Stack *stack)
         free(tmp);
     }
     free(stack);
+    *ptr_address = NULL;
 }

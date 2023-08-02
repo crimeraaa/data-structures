@@ -140,7 +140,7 @@ void print_all_strings(void)
 void clear_all_strings(void)
 {
     // Same case as <print_all_strings>.
-    stack_destroy(storedstrings);
+    stack_destroy(&storedstrings);
 }
 
 size_t slength(const char *str)
